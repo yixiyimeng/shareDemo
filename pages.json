@@ -10,6 +10,10 @@
             "path" : "pages/qrcode/qrcode",
             "style" : {}
         }
+        ,{
+            "path" : "pages/upload/upload",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {
@@ -22,7 +26,32 @@
 		"navigationStyle": "custom",
 		"navigationBarTextStyle": "white"
 	},
-	"usingComponts": true
+	"usingComponts": true,
+	"tabBar": {
+		"color": "#6b6b6b",
+		"selectedColor": "#000",
+		"borderStyle": "black",
+		"backgroundColor": "#fff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tabbar/basics.png",
+				"selectedIconPath": "static/tabbar/basics_cur.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/qrcode/qrcode",
+				"iconPath": "static/tabbar/about.png",
+				"selectedIconPath": "static/tabbar/about_cur.png",
+				"text": "二维码"
+			}, {
+				"pagePath": "pages/upload/upload",
+				"iconPath": "static/tabbar/component.png",
+				"selectedIconPath": "static/tabbar/component_cur.png",
+				"text": "上传图片"
+			}
+	
+		]
+	}
 		
 
 }

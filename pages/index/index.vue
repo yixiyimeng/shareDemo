@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<view class="tip">getSreenShot 获取图片内容的回调</view>
 		<screenShot @getSreenShot="getSreenShot">
 			<image src="/static/banner.jpg" mode="" :style="{
                         height: windowHeight + 'px',
@@ -43,5 +44,10 @@
 </script>
 
 <style>
-
+.tip{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index:999
+}
 </style>

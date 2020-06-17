@@ -8,8 +8,8 @@
 				width: windowWidth + 'px'
 			}" v-if="canvasImg.isDis">
 			<view class="relative">
-				<view class="absolute icon_close" @click="closeSreenShot">12
-					<!-- <image src="/static/clear.png" mode=""></image> -->
+				<view class="absolute icon_close" @click="closeSreenShot">
+					<text class="cuIcon-roundclosefill"></text>
 				</view>
 				<view class="absolute">
 					<image :src="canvasImg.imgSrc" mode="" :style="{
@@ -21,7 +21,6 @@
 		</view>
 		<view class="absolute icon_download" @click="getSreenShot" :style="{ display: iconDisplay }">
 			截图
-			<!-- <image src="/static/download.png" mode=""></image> -->
 		</view>
 	</view>
 </template>
@@ -62,8 +61,8 @@
 			getSreenShot() {
 				let _this = this;
 				let canvasImgConfig = {
-					width: window.screen.availWidth, //canvas窗口宽度
-					height: window.screen.availHeight, //canvas窗口高度
+					width: _this.windowWidth, //canvas窗口宽度
+					height:_this.windowHeight, //canvas窗口高度
 					windowWidth: document.body.scrollWidth, //获取X方向滚动条内容
 					windowHeight: document.body.scrollHeight,
 					x: 0,
@@ -113,13 +112,10 @@
 
 	.icon_close {
 		z-index: 999;
-		right: -20upx;
-		top: -20upx;
-
-		image {
-			width: 40upx;
-			height: 40upx;
-		}
+		right: 20upx;
+		top: 20upx;
+		color: #f00;
+		font-size: 40upx;
 	}
 
 	.icon_download {
@@ -129,9 +125,9 @@
 		bottom: 100upx;
 		right: 40upx;
 
-		image {
-			width: 60upx;
-			height: 60upx;
-		}
+		// image {
+		// 	width: 60upx;
+		// 	height: 60upx;
+		// }
 	}
 </style>
