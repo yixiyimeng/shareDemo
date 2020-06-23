@@ -20,7 +20,7 @@
 
 <script>
 	export default {
-		name: 'tuiUpload',
+		name: 'upload',
 		props: {
 			//初始化图片路径
 			value: {

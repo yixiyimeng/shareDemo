@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="absolute" id="capture">
+		<view class="absolute" id="capture" style="width: 100%; height: 100%;display: none;">
 			<slot></slot>
 		</view>
 		<view class="fixed canvasImg" :style="{
@@ -8,13 +8,13 @@
 				width: windowWidth + 'px'
 			}" v-if="canvasImg.isDis">
 			<view class="relative">
-				<view class="absolute icon_close" @click="closeSreenShot">
+				<view class="absolute icon_close" style="right: 12.5%; top: 14.8%;" @click="closeSreenShot">
 					<text class="cuIcon-roundclosefill"></text>
 				</view>
-				<view class="absolute">
+				<view class="absolute" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
 					<image :src="canvasImg.imgSrc" mode="" :style="{
-							height: windowHeight - 40 + 'px',
-							width: windowWidth - 40 + 'px'
+							height: '70%',
+							width: '70%'
 						}"></image>
 				</view>
 			</view>
@@ -66,7 +66,11 @@
 					windowWidth: document.body.scrollWidth, //获取X方向滚动条内容
 					windowHeight: document.body.scrollHeight,
 					x: 0,
-					y: window.pageYOffset
+					y: window.pageYOffset,
+					onclone(doc) {
+						let e = doc.querySelector('#capture');
+						e.style.display = 'block';
+					}
 				};
 				_this.iconDisplay = 'none';
 				html2canvas(document.querySelector('#capture'), canvasImgConfig).then(canvas => {
